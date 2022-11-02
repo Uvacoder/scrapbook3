@@ -1,0 +1,91 @@
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = "native"
+}
+
+model AccountCredential {
+  id         String  @id
+  userId     Int
+  user       Account @relation(fields: [userId], references: [id])
+  publicKey  Bytes
+  transports String?
+  counter    BigInt
+}
+
+model Account {
+  id                      Int                 @id @default(autoincrement())
+  // Fields for web-based Scrapbook users
+  email                   String?             @unique
+  hashedPassword          String?
+  salt                    String?
+  resetToken              String?
+  resetTokenExpiresAt     DateTime?
+  webAuthnChallenge       String?             @unique
+  credentials             AccountCredential[]
+  // Fields for Slack-based Scrapbook users
+  slackID                 String?             @unique
+  // Fields for all Scrapbook users
+  username                String              @unique @default(uuid())
+  timezone                String              @default("Factory")
+  timezoneOffset          Int                 @default(0)
+  // Optional fields for all Scrapbook users
+  streakCount             Int?
+  maxStreaks              Int?
+  displayStreak           Boolean?
+  streaksToggledOff       Boolean?
+  customDomain            String?
+  cssURL                  String?
+  website                 String?
+  github                  String?
+  fullSlackMember         Boolean?
+  avatar                  String?
+  webring                 String[]
+  pronouns                String?
+  customAudioURL          String?
+  lastUsernameUpdatedTime DateTime?
+  webhookURL              String?
+  updates                 Update[]
+  // Deprectated old fields for cross-compatibility.
+  newMember               Boolean?
+}
+
+model Update {
+  id               String          @id @default(cuid())
+  accountsID       Int?
+  postTime         DateTime?       @default(now())
+  text             String?
+  attachments      String[]
+  muxAssetIDs      String[]
+  muxPlaybackIDs   String[]
+  muxAssetStatuses String?
+  messageTimestamp Float?
+  backupAssetID    String?
+  backupPlaybackID String?
+  isLargeVideo     Boolean?
+  channel          String?
+  clubscrapID      String?         @unique
+  Accounts         Account?        @relation(fields: [accountsID], references: [id])
+  emojiReactions   EmojiReaction[]
+}
+
+model EmojiType {
+  id             String          @id @default(cuid())
+  name           String          @unique(map: "EmojiType.name_unique")
+  emojiSource    String?
+  emojiReactions EmojiReaction[]
+}
+
+model EmojiReaction {
+  id            String     @id @default(cuid())
+  updateId      String?
+  emojiTypeName String?
+  usersReacted  Int[]
+  updatedAt     DateTime   @default(now()) @map("created_at")
+  EmojiType     EmojiType? @relation(fields: [emojiTypeName], references: [name])
+  update        Update?    @relation(fields: [updateId], references: [id])
+}
