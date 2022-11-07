@@ -1322,10 +1322,18 @@
     core-js-pure "^3.20.2"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime-corejs3@7.19.1", "@babel/runtime-corejs3@^7.10.2":
+"@babel/runtime-corejs3@7.19.1":
   version "7.19.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.19.1.tgz#f0cbbe7edda7c4109cd253bb1dee99aba4594ad9"
   integrity sha512-j2vJGnkopRzH+ykJ8h68wrHnEUmtK//E723jjixiAl/PPf6FhqY/vYRcMVlNydRKQjQsTsYEjpx+DZMIvnGk/g==
+  dependencies:
+    core-js-pure "^3.25.1"
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime-corejs3@7.19.4", "@babel/runtime-corejs3@^7.10.2":
+  version "7.19.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.19.4.tgz#870dbfd9685b3dad5aeb2d00841bb8b6192e3095"
+  integrity sha512-HzjQ8+dzdx7dmZy4DQ8KV8aHi/74AjEbBGTFutBmg/pd3dY5/q1sfuOGPTFGEytlQhWoeVXqcK5BwMgIkRkNDQ==
   dependencies:
     core-js-pure "^3.25.1"
     regenerator-runtime "^0.13.4"
@@ -1437,15 +1445,37 @@
   dependencies:
     graphql-depth-limit "^1.1.0"
 
+"@envelop/depth-limit@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@envelop/depth-limit/-/depth-limit-1.8.0.tgz#d64ec52785ecad5a82fdaeb0425b7f37c58beb6a"
+  integrity sha512-zI3zLePXN7rks1+5yQnk2cQF10bVbBB3gkXLc4LzCUhmN/tCuiYNmjyOh6AvwwnwxbD5aHPFpaTRvWUsSm7epg==
+  dependencies:
+    graphql-depth-limit "^1.1.0"
+    tslib "^2.4.0"
+
 "@envelop/disable-introspection@3.4.2":
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/@envelop/disable-introspection/-/disable-introspection-3.4.2.tgz#b16bdfb66b4cb91b76d38739f68c8620998ec3f7"
   integrity sha512-iCVhSJVd/5iTvNWmPF4i5G8npYHK8VBOMVwiN8UN7HRIYxvPBuXEb4KEYVBVtrtFcSnQ73/cCclWQghPaX2Sfw==
 
+"@envelop/disable-introspection@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@envelop/disable-introspection/-/disable-introspection-3.6.0.tgz#04b033389a83b9831442caabcbae30bde89857b9"
+  integrity sha512-Zf505LqWo2efM0EtTBvXyYPynSTSL2+Ps0X+dCH33vQ3wF6gxMui9g1pGa4MDcGjaXWG67qZcT4eojpGlmmavA==
+  dependencies:
+    tslib "^2.4.0"
+
 "@envelop/filter-operation-type@3.4.2":
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/@envelop/filter-operation-type/-/filter-operation-type-3.4.2.tgz#9ac2328c061f3e3b37fe85b92afecc85318517e1"
   integrity sha512-CERhw6Y+xOEpn2EfitjyXXB08nhR82tN8XpshlQzKnsDnFKH/VaXPqunoh3Ii3UXGOEknL/7kh2LqLzV/MXfVg==
+
+"@envelop/filter-operation-type@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@envelop/filter-operation-type/-/filter-operation-type-3.6.0.tgz#38b4938293105400da62a1d500ba3a26163bed7d"
+  integrity sha512-k3Y5wz8Jj+WUSG6DAv392jS1s7swMx0EUgfHM+6NbExTqXfQKwGTH1lJktKWEZaiHPwvt0qhWHwNbR7OO0YsXw==
+  dependencies:
+    tslib "^2.4.0"
 
 "@envelop/parser-cache@4.5.2":
   version "4.5.2"
@@ -1454,7 +1484,7 @@
   dependencies:
     lru-cache "^6.0.0"
 
-"@envelop/parser-cache@^4.6.0":
+"@envelop/parser-cache@4.7.0", "@envelop/parser-cache@^4.6.0":
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/@envelop/parser-cache/-/parser-cache-4.7.0.tgz#fc438d8ed390c88fa24bf56da3e4da36f088e3fc"
   integrity sha512-63NfXDcW/vGn4U6NFxaZ0JbYWAcJb9A6jhTvghsSz1ZS+Dny/ci8bVSgVmM1q+N56hPyGsVPuyI+rIc71mPU5g==
@@ -1476,7 +1506,7 @@
   dependencies:
     lru-cache "^6.0.0"
 
-"@envelop/validation-cache@^4.6.0":
+"@envelop/validation-cache@4.7.0", "@envelop/validation-cache@^4.6.0":
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/@envelop/validation-cache/-/validation-cache-4.7.0.tgz#6871116c5387cd7c310b9ae9187d29c2793ae33f"
   integrity sha512-PzL+GfWJRT+JjsJqZAIxHKEkvkM3hxkeytS5O0QLXT8kURNBV28r+Kdnn2RCF5+6ILhyGpiDb60vaquBi7g4lw==
@@ -2813,6 +2843,26 @@
     title-case "3.0.3"
     uuid "9.0.0"
 
+"@redwoodjs/api@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/api/-/api-3.3.0.tgz#0e7770a21a32c1790845b6a98a8f991e4ad59af1"
+  integrity sha512-YotpY6Iy6iBKfhKIYUFB450fu722ZcRVyMbZbQzYhCKuJpuO1M+EnbbU40cec2RW7um3l6nhuH/TMyUGG4qyoQ==
+  dependencies:
+    "@babel/runtime-corejs3" "7.19.4"
+    "@prisma/client" "4.3.1"
+    base64url "3.0.1"
+    core-js "3.25.5"
+    cross-undici-fetch "0.4.14"
+    crypto-js "4.1.1"
+    humanize-string "2.1.0"
+    jsonwebtoken "8.5.1"
+    jwks-rsa "2.0.5"
+    md5 "2.3.0"
+    pascalcase "1.0.0"
+    pino "8.6.1"
+    title-case "3.0.3"
+    uuid "9.0.0"
+
 "@redwoodjs/auth@3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@redwoodjs/auth/-/auth-3.0.1.tgz#6a50794118f50d166e4af4b7d448dac49d04787e"
@@ -2983,6 +3033,32 @@
     cross-undici-fetch "0.4.14"
     graphql "16.6.0"
     graphql-scalars "1.17.0"
+    graphql-tag "2.12.6"
+    lodash.merge "4.6.2"
+    lodash.omitby "4.6.0"
+    uuid "9.0.0"
+
+"@redwoodjs/graphql-server@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/graphql-server/-/graphql-server-3.3.0.tgz#a832daaa72603af74dfd569fdab884d79399701a"
+  integrity sha512-ImD7bkcqaGsICjCGhT+Q4K204ggNgjRRMfCBFsZA5gQtIVf5eLWz58IObnMuApwYn5wlDnP52ZAqn8IOYPT0IA==
+  dependencies:
+    "@babel/runtime-corejs3" "7.19.4"
+    "@envelop/depth-limit" "1.8.0"
+    "@envelop/disable-introspection" "3.6.0"
+    "@envelop/filter-operation-type" "3.6.0"
+    "@envelop/parser-cache" "4.7.0"
+    "@envelop/validation-cache" "4.7.0"
+    "@graphql-tools/merge" "8.3.6"
+    "@graphql-tools/schema" "8.5.1"
+    "@graphql-tools/utils" "8.12.0"
+    "@graphql-yoga/common" "2.12.12"
+    "@prisma/client" "4.3.1"
+    "@redwoodjs/api" "3.3.0"
+    core-js "3.25.5"
+    cross-undici-fetch "0.4.14"
+    graphql "16.6.0"
+    graphql-scalars "1.19.0"
     graphql-tag "2.12.6"
     lodash.merge "4.6.2"
     lodash.omitby "4.6.0"
@@ -10160,6 +10236,13 @@ graphql-scalars@1.17.0:
   dependencies:
     tslib "~2.3.0"
 
+graphql-scalars@1.19.0:
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/graphql-scalars/-/graphql-scalars-1.19.0.tgz#e23907dd137f7851185199c25b3d756e145c2bf9"
+  integrity sha512-Kg1ecLMMYdCCfKTsi5rJ6Och3KRLEzWdze1lVbCoP+Grjp2a33rogVvECCKAgeOSWCYM7ctaJ5fVdVgzCSN6fA==
+  dependencies:
+    tslib "~2.4.0"
+
 graphql-tag@2.12.6, graphql-tag@^2.11.0, graphql-tag@^2.12.6:
   version "2.12.6"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.12.6.tgz#d441a569c1d2537ef10ca3d1633b48725329b5f1"
@@ -14129,7 +14212,7 @@ pino@8.5.0:
     sonic-boom "^3.1.0"
     thread-stream "^2.0.0"
 
-pino@^8.0.0:
+pino@8.6.1, pino@^8.0.0:
   version "8.6.1"
   resolved "https://registry.yarnpkg.com/pino/-/pino-8.6.1.tgz#3fc43acc79bcd3e871670347854f7359e2612f10"
   integrity sha512-fi+V2K98eMZjQ/uEHHSiMALNrz7HaFdKNYuyA3ZUrbH0f1e8sPFDmeRGzg7ZH2q4QDxGnJPOswmqlEaTAZeDPA==
